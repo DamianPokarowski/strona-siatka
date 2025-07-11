@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Strona Główna</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+
+<div class="page-wrapper">
+
+    <!-- Baner z logo -->
+    <header class="banner-header">
+        <div class="banner-content">
+            <img src="img/logo-placeholder.png" alt="Logo Klubu" class="logo">
+            <h1>Biłgorajskie Towarzystwo Siatkarskie - Libero</h1>
+        </div>
+    </header>
+
+    <!-- Nawigacja sticky -->
+    <nav>
+        <ul>
+            <li><a href="aktualnosci.html">Aktualności</a></li>
+            <li><a href="terminarz.html">Terminarz</a></li>
+            <li><a href="kadra.html">Kadra</a></li>
+            <li><a href="klub.html">Klub</a></li>
+            <li><a href="archiwum.html">Archiwum</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <main class="main-content">
+            <section class="aktualnosci">
+                <h2>Ostatnie aktualności</h2>
+
+                <!-- Pięć przykładowych aktualności -->
+                <div class="aktualnosc">
+                    <img src="img/akt1.jpg" alt="Aktualność 1">
+                    <div class="aktualnosc-info">
+                        <h3>Mecz otwarcia sezonu</h3>
+                        <p>Wspaniałe rozpoczęcie sezonu! Nasza drużyna wygrała 3:1.</p>
+                    </div>
+                </div>
+
+                <div class="aktualnosc">
+                    <img src="img/akt2.jpg" alt="Aktualność 2">
+                    <div class="aktualnosc-info">
+                        <h3>Nowy sponsor dołącza</h3>
+                        <p>Miło nam ogłosić nowego sponsora – Firma X wspiera nasz rozwój!</p>
+                    </div>
+                </div>
+
+                <div class="aktualnosc">
+                    <img src="img/akt3.jpg" alt="Aktualność 3">
+                    <div class="aktualnosc-info">
+                        <h3>Turniej młodzieżowy</h3>
+                        <p>Udana organizacja turnieju w hali OSiR. Gratulacje dla uczestników!</p>
+                    </div>
+                </div>
+
+                <div class="aktualnosc">
+                    <img src="img/akt4.jpg" alt="Aktualność 4">
+                    <div class="aktualnosc-info">
+                        <h3>Nowe stroje drużyny</h3>
+                        <p>Nowoczesne i funkcjonalne stroje już dostępne! Zobacz galerię.</p>
+                    </div>
+                </div>
+
+                <div class="aktualnosc">
+                    <img src="img/akt5.jpg" alt="Aktualność 5">
+                    <div class="aktualnosc-info">
+                        <h3>Wyjazd do Lublina</h3>
+                        <p>Relacja z wyjazdowego meczu z drużyną Lublin Team.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <aside class="sidebar">
+
+            <!-- Kafelek z odliczaniem -->
+            <div class="countdown-box">
+                <h3>Najbliższy mecz za:</h3>
+                <div id="countdown">
+                    <span id="days">00</span>d
+                    <span id="hours">00</span>g
+                    <span id="minutes">00</span>m
+                    <span id="seconds">00</span>s
+                </div>
+            </div>
+
+            <!-- Kafelek sponsorzy -->
+            <div class="info-box sponsor-box">
+                <div class="sponsor-header">Sponsorzy klubu</div>
+                <div class="sponsor-slider-single">
+                    <img id="sponsorImage" src="img/sponsor1.png" alt="Sponsor">
+                </div>
+            </div>
+
+        </aside>
+    </div>
+
+    <footer>
+        <p>Znajdź nas na social mediach:</p>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/..." target="_blank" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/..." target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+    </footer>
+
+</div>
+
+<!-- Countdown Script -->
+<script>
+    const nextMatchDate = new Date("2025-07-14T18:00:00").getTime();
+
+    const countdown = () => {
+        const now = new Date().getTime();
+        const distance = nextMatchDate - now;
+
+        if (distance < 0) {
+            document.getElementById("countdown").innerHTML = "Mecz trwa lub już się odbył!";
+            return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerText = days.toString().padStart(2, '0');
+        document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
+        document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
+        document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
+    };
+
+    setInterval(countdown, 1000);
+</script>
+
+<!-- Slider sponsorów -->
+<script>
+    const sponsorImages = [
+        "img/sponsor1.png",
+        "img/sponsor1.png",
+        "img/sponsor1.png"
+    ];
+
+    let currentIndex = 0;
+    const sponsorImage = document.getElementById("sponsorImage");
+
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % sponsorImages.length;
+        sponsorImage.style.opacity = 0;
+        setTimeout(() => {
+            sponsorImage.src = sponsorImages[currentIndex];
+            sponsorImage.style.opacity = 1;
+        }, 300);
+    }, 3000);
+</script>
+
+</body>
+</html>
