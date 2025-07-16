@@ -23,37 +23,22 @@ html, body {
 }
 
 /* ====== BANER Z LOGO ====== */
-.banner-header {
-    background-image: url("img/banner-placeholder.jpg");
+.banner {
+    background: url("../materiały/img/zdj_baner_tymczasowy2.jpeg") no-repeat center center;
     background-size: cover;
-    background-position: center;
     height: 220px;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
-    text-align: center;
-    color: white;
 }
 
-.banner-content {
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 20px 40px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.banner-content .logo {
-    width: 80px;
-    height: auto;
-}
-
-.banner-content h1 {
-    margin: 0;
-    font-size: 1.8em;
-    letter-spacing: 1px;
+/* Wycentrowane logo */
+.banner-logo-centered {
+    height: 300px !important;
+    width: auto !important;
+    object-fit: contain;
+    filter: drop-shadow(0 0 5px rgba(0,0,0,0.5));
 }
 
 /* Sticky header (menu pod banerem) */
@@ -99,7 +84,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #FFD100; /* żółty z logo */
+    color: #FFD100;
 }
 
 /* Główna zawartość i sidebar */
@@ -128,12 +113,6 @@ nav ul li a:hover {
 }
 
 /* Sekcja aktualności */
-.aktualnosci {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
 .aktualnosc {
     display: flex;
     background-color: #ffffff;
@@ -188,7 +167,7 @@ nav ul li a:hover {
 #countdown {
     font-size: 1.2em;
     font-weight: bold;
-    color: #D62828; /* czerwony */
+    color: #D62828;
     margin-top: 10px;
 }
 
@@ -198,7 +177,7 @@ nav ul li a:hover {
     text-align: center;
 }
 
-/* Kafelek z informacjami i sponsorami */
+/* Kafelek sponsorzy */
 .info-box {
     background-color: #f0f0f0;
     padding: 15px;
@@ -273,6 +252,7 @@ footer {
     color: #FFD100;
 }
 
+/* Kadra tabela */
 .kadra-table {
     width: 100%;
     border-collapse: collapse;
@@ -297,10 +277,19 @@ footer {
     background-color: #f9f9f9;
 }
 
+/* Zdjęcia zawodników */
 .avatar {
     width: 50px;
     height: 50px;
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid #ccc;
+}
+
+.logo {
+    height: 140px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    margin-right: 20px;
 }
