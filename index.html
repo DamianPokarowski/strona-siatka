@@ -93,7 +93,7 @@
             <div class="info-box sponsor-box">
                 <div class="sponsor-header">Sponsorzy klubu</div>
                 <div class="sponsor-slider-single">
-                    <img id="sponsorImage" src="img/logo.png" alt="Sponsor">
+                    <img id="sponsorImage" src="materiały/img/logo.png" alt="Sponsor">
                 </div>
             </div>
         </aside>
@@ -142,21 +142,25 @@
 
 <!-- slider sponsorów -->
 <script>
-    const sponsorImages = [
-        "img/logo.png"
-    ];
+    document.addEventListener("DOMContentLoaded", function () {
+        const sponsorImages = [
+            "materiały/img/logo.png"
+        ];
 
-    let currentIndex = 0;
-    const sponsorImage = document.getElementById("sponsorImage");
+        let currentIndex = 0;
+        const sponsorImage = document.getElementById("sponsorImage");
 
-    setInterval(() => {
-        currentIndex = (currentIndex + 1) % sponsorImages.length;
-        sponsorImage.style.opacity = 0;
-        setTimeout(() => {
-            sponsorImage.src = sponsorImages[currentIndex];
-            sponsorImage.style.opacity = 1;
-        }, 300);
-    }, 3000);
+        if (sponsorImage) {
+            setInterval(() => {
+                currentIndex = (currentIndex + 1) % sponsorImages.length;
+                sponsorImage.style.opacity = 0;
+                setTimeout(() => {
+                    sponsorImage.src = sponsorImages[currentIndex];
+                    sponsorImage.style.opacity = 1;
+                }, 300);
+            }, 3000);
+        }
+    });
 </script>
 
 </body>
