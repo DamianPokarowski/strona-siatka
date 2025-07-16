@@ -24,7 +24,7 @@ html, body {
 
 /*  BANER Z LOGO */
 .banner {
-    background: url("../materiały/img/zdj_baner_tymczasowy2.jpeg") no-repeat center center;
+    background: url("../materialy/img/zdj_baner_tymczasowy2.jpeg") no-repeat center center;
     background-size: cover;
     height: 220px;
     position: relative;
