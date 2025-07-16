@@ -22,7 +22,7 @@ html, body {
     min-height: 100vh;
 }
 
-/* ====== BANER Z LOGO ====== */
+/*  BANER Z LOGO */
 .banner {
     background: url("../materiały/img/zdj_baner_tymczasowy2.jpeg") no-repeat center center;
     background-size: cover;
@@ -41,7 +41,7 @@ html, body {
     filter: drop-shadow(0 0 5px rgba(0,0,0,0.5));
 }
 
-/* Sticky header (menu pod banerem) */
+/* Sticky header  */
 header {
     background: #0056A3;
     color: white;
