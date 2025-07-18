@@ -10,24 +10,54 @@
 
 <div class="page-wrapper">
 
-    <header class="banner-header">
-        <div class="banner-content">
-            <img src="img/logo-placeholder.png" alt="Logo Klubu" class="logo">
-            <h1>Biłgorajskie Towarzystwo Siatkarskie - Libero</h1>
-        </div>
+    <!-- Baner -->
+    <header class="banner">
+        <a href="index.html">
+            <img src="materialy/img/logo.png" alt="Herb klubu" class="banner-logo-centered">
+        </a>
     </header>
 
+    <!-- Nawigacja -->
     <nav>
         <ul>
             <li><a href="index.html">Strona Główna</a></li>
             <li><a href="aktualnosci.html">Aktualności</a></li>
-            <li><a href="kadra.html">Kadra</a></li>
-            <li><a href="klub.html">Klub</a></li>
-            <li><a href="archiwum.html">Archiwum</a></li>
+
+            <li class="dropdown">
+                <a href="#">Nasz Klub <i class="fas fa-caret-down"></i></a>
+                <ul class="dropdown-content">
+                    <li><a href="informacje.html">Informacje o klubie</a></li>
+                    <li><a href="kadra.html">Kadra</a></li>
+                    <li><a href="trofea.html">Trofea i osiągnięcia</a></li>
+                    <li><a href="zycie.html">Życie drużyny</a></li>
+                    <li><a href="wywiady.html">Wywiady</a></li>
+                </ul>
+            </li>
+
+            <li><a href="siatkarski-bilgoraj.html">Siatkarski Biłgoraj</a></li>
+
+            <li class="dropdown">
+                <a href="#">Edukacja <i class="fas fa-caret-down"></i></a>
+                <ul class="dropdown-content">
+                    <li><a href="technika.html">Technika</a></li>
+                    <li><a href="taktyka.html">Taktyka</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <a href="#">Ciekawostki <i class="fas fa-caret-down"></i></a>
+                <ul class="dropdown-content">
+                    <li><a href="historyjki.html">Historyjki</a></li>
+                    <li><a href="nietypowe.html">Nietypowe sytuacje</a></li>
+                    <li><a href="zaskakujace-fakty.html">Zaskakujące fakty</a></li>
+                </ul>
+            </li>
+
             <li><a href="kontakt.html">Kontakt</a></li>
         </ul>
     </nav>
 
+    <!-- Główna zawartość -->
     <div class="container">
         <main class="main-content">
             <section>
@@ -37,6 +67,7 @@
         </main>
     </div>
 
+    <!-- Stopka -->
     <footer>
         <p>Znajdź nas na social mediach:</p>
         <div class="social-icons">

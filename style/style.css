@@ -293,3 +293,50 @@ footer {
     object-fit: contain;
     margin-right: 20px;
 }
+
+/* Styl rozwijanego menu */
+nav ul li.dropdown {
+    position: relative;
+}
+
+nav ul li.dropdown a i {
+    margin-left: 6px;
+    font-size: 0.8em;
+}
+
+/* Ukryte podmenu */
+nav ul li .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #003f7f;
+    min-width: 220px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    z-index: 1001;
+    border-radius: 4px;
+}
+
+/* Styl elementów w rozwijanym menu */
+nav ul li .dropdown-content li {
+    display: block;
+    margin: 0;
+}
+
+nav ul li .dropdown-content li a {
+    display: block;
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover efekt – żółty jak w menu głównym */
+nav ul li .dropdown-content li a:hover {
+    background-color: #FFD100;
+    color: #003f7f;
+}
+
+/* Pokazuj podmenu po najechaniu */
+nav ul li.dropdown:hover .dropdown-content {
+    display: block;
+}
