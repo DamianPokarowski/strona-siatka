@@ -340,3 +340,44 @@ nav ul li .dropdown-content li a:hover {
 nav ul li.dropdown:hover .dropdown-content {
     display: block;
 }
+
+/* Animowana piłka siatkowa w rozwijanym menu */
+.dropdown-content li {
+    position: relative;
+    overflow: hidden;
+}
+
+.dropdown-content li:hover .ball-icon {
+    animation: fly-ball 1s forwards;
+    opacity: 1;
+}
+
+.ball-icon {
+    position: absolute;
+    left: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    opacity: 0;
+    transition: opacity 0.2s;
+    pointer-events: none;
+}
+
+@keyframes fly-ball {
+    0% {
+        left: -40px;
+        opacity: 0;
+        transform: translateY(-50%) rotate(0deg);
+    }
+    50% {
+        left: 10px;
+        opacity: 1;
+        transform: translateY(-50%) rotate(180deg);
+    }
+    100% {
+        left: 120%;
+        opacity: 0;
+        transform: translateY(-50%) rotate(360deg);
+    }
+}
